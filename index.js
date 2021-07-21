@@ -184,8 +184,7 @@ class Car {
   else{
     this.tank = this.tankSize
   }
-  return this.tank * this.mpg
-    //sree
+    return this.tank * this.mpg
   }
 }//class
 
@@ -202,8 +201,20 @@ class Car {
  *    // result is false
  * })
  */
-function isEvenNumberAsync(number) {
+// function isEvenNumberAsync(number) {
+//   // ✨ implement
+//   if(number % 2 === 0){
+//     return Promise.resolve(true)
+//   }
+//   return Promise.resolve(false)
+// }
+//or
+async function isEvenNumberAsync(number) {
   // ✨ implement
+  if(typeof number !== "number" || isNaN(number)){
+    throw new Error("number must be a number");
+  }
+  return number % 2 === 0 || false
 }
 
 module.exports = {
